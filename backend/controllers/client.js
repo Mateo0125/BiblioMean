@@ -1,10 +1,11 @@
 import client from "../models/client.js";
 
 const registerClient = async (req, res) => {
-  if (!req.body.email) return res.status(400).send("Information missing");
+  if (!req.body.email || !req.body.name || !req.body.password)
+    return res.status(400).send("Information missing");
   // decirle al profe acerca del ! en el existingClient
   const existingClient = await client.findOne({ email: req.body.email });
-  if (!existingClient) return res.status(400).send("This email already exist");
+  if (existingClient) return res.status(400).send("This email already exist");
 
   const clientSchema = new client({
     name: req.body.name,
@@ -47,11 +48,19 @@ const updateClient = async (req, res) => {
     : res.status(200).send({ clientUpdate });
 };
 const deleteClient = async (req, res) => {
-  const clientDelete = await client.findByIdAndDelete({ _id: req.params["_id"] });
+  const clientDelete = await client.findByIdAndDelete({
+    _id: req.params["_id"],
+  });
 
   return !clientDelete
     ? res.status(400).send("Client not found")
     : res.status(200).send("Client deleted");
 };
 
-export default { registerClient, listClient, findClient, updateClient, deleteClient };
+export default {
+  registerClient,
+  listClient,
+  findClient,
+  updateClient,
+  deleteClient,
+};

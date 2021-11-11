@@ -60,7 +60,7 @@ const deleteBook = async (req, res) => {
 
   return !bookDelete
     ? res.status(400).send("Book not found")
-    : res.status(200).send("Role deleted");
+    : res.status(200).send("Book deleted");
 };
 
 export default { registerBook, listBook, findBook, updateBook, deleteBook };
