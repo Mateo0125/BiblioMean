@@ -4,6 +4,7 @@ const clientSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  clientId: { type: mongoose.Schema.ObjectId, ref: "clients" },
   registerDate: { type: Date, default: Date.now },
   dbStatus: { type: Boolean, default: true },
 });
