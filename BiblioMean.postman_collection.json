@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "8310a5fb-5328-4cf4-9839-1d75deb13da4",
+		"name": "BiblioMean",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test-book",
+			"item": [
+				{
+					"name": "register book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Harry potter\",\r\n    \"author\": \"Juan\",\r\n    \"publicationYear\": \"2021\",\r\n    \"pages\": 300,\r\n    \"genre\": \"action\",\r\n    \"price\": 20000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/book/registerBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"book",
+								"registerBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODgwMTJiZTlhMjY0YjlhZDQyYTYiLCJuYW1lIjoibWFudWVsaXRhIiwicm9sZUlkIjoiNjE5Njc2MmYwNzA0NTgwYjdmYjk5Yjk1IiwiaWF0IjoxNjM3MjU2MzA4fQ.M11fPfuXjGCZxxVl7fQovKS__NuIEeB8-YAYTD-juak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fast and fourius 2\",\r\n    \"author\": \"roberto\",\r\n    \"publicationYear\": \"253264\",\r\n    \"pages\": 345745,\r\n    \"genre\": \"sleeping and wake\",\r\n    \"price\": 84463484\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/book/listBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"book",
+								"listBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODgwMTJiZTlhMjY0YjlhZDQyYTYiLCJuYW1lIjoibWFudWVsaXRhIiwicm9sZUlkIjoiNjE5Njc2MmYwNzA0NTgwYjdmYjk5Yjk1IiwiaWF0IjoxNjM3MjU2MzA4fQ.M11fPfuXjGCZxxVl7fQovKS__NuIEeB8-YAYTD-juak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6196879b2be9a264b9ad42a2\",\r\n    \"name\": \"casablanca48\",\r\n    \"author\": \"Mateo giraldo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/book/updateBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"book",
+								"updateBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODgwMTJiZTlhMjY0YjlhZDQyYTYiLCJuYW1lIjoibWFudWVsaXRhIiwicm9sZUlkIjoiNjE5Njc2MmYwNzA0NTgwYjdmYjk5Yjk1IiwiaWF0IjoxNjM3MjU2MzA4fQ.M11fPfuXjGCZxxVl7fQovKS__NuIEeB8-YAYTD-juak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/book/deleteBook/6196879b2be9a264b9ad42a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"book",
+								"deleteBook",
+								"6196879b2be9a264b9ad42a2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"manuelita\",\r\n    \"email\": \"manuelita@gmaasdil.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODgwMTJiZTlhMjY0YjlhZDQyYTYiLCJuYW1lIjoibWFudWVsaXRhIiwicm9sZUlkIjoiNjE5Njc2MmYwNzA0NTgwYjdmYjk5Yjk1IiwiaWF0IjoxNjM3MjU2MzA4fQ.M11fPfuXjGCZxxVl7fQovKS__NuIEeB8-YAYTD-juak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODgwMTJiZTlhMjY0YjlhZDQyYTYiLCJuYW1lIjoibWFudWVsaXRhIiwicm9sZUlkIjoiNjE5Njc2MmYwNzA0NTgwYjdmYjk5Yjk1IiwiaWF0IjoxNjM3MjU2MzA4fQ.M11fPfuXjGCZxxVl7fQovKS__NuIEeB8-YAYTD-juak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"61968cfff8574d77f8febdfa\",\r\n    \"name\":\"cleopatra\",\r\n    \"email\":\"asde@sist.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODgwMTJiZTlhMjY0YjlhZDQyYTYiLCJuYW1lIjoibWFudWVsaXRhIiwicm9sZUlkIjoiNjE5Njc2MmYwNzA0NTgwYjdmYjk5Yjk1IiwiaWF0IjoxNjM3MjU2MzA4fQ.M11fPfuXjGCZxxVl7fQovKS__NuIEeB8-YAYTD-juak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/deleteUser/61968cfff8574d77f8febdfa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"deleteUser",
+								"61968cfff8574d77f8febdfa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mateo\",\r\n    \"address\": \"calle 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/supplier/registerSupplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"supplier",
+								"registerSupplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3001/api/supplier/listSupplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mateo\",\r\n    \"address\": \"calle 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/supplier/listSupplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"supplier",
+								"listSupplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3001/api/supplier/listSupplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6189f7306f2539250385bf8f\",\r\n    \"name\": \"imagenes\",\r\n    \"address\": \"calle 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/supplier/updateSupplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"supplier",
+								"updateSupplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "supplier delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6189f7306f2539250385bf8f\",\r\n    \"name\": \"imagenes\",\r\n    \"address\": \"calle 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/supplier/deleteSupplier/6189f7306f2539250385bf8f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"supplier",
+								"deleteSupplier",
+								"6189f7306f2539250385bf8f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin\",\r\n    \"description\":\"Can do whatever they want\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"client\",\r\n    \"description\":\"They can just list and search books\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/role/listRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"listRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODUwYjEyNDA2MTBkZGFkNWRiYjUiLCJuYW1lIjoibWF0ZW8iLCJyb2xlSWQiOiI2MTk2NjkzYWM0NjJhODYyZTZlMGRhZmQiLCJpYXQiOjE2MzcyNTcwMTN9.3Rv-ZzwphbBcw45UVxfHdQXxc_pmaTSvStfUTRCVjH4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/role/deleteRole/619681e2f38d1224a95a4c86",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"deleteRole",
+								"619681e2f38d1224a95a4c86"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk2ODUwYjEyNDA2MTBkZGFkNWRiYjUiLCJuYW1lIjoibWF0ZW8iLCJyb2xlSWQiOiI2MTk2NjkzYWM0NjJhODYyZTZlMGRhZmQiLCJpYXQiOjE2MzcyNTcwMTN9.3Rv-ZzwphbBcw45UVxfHdQXxc_pmaTSvStfUTRCVjH4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"619681eff38d1224a95a4c89\",\r\n    \"name\": \"cliente2\",\r\n    \"description\": \"ejeje chavales\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/updateRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"updateRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mateo@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"manuelita@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
